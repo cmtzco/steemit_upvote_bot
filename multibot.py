@@ -33,7 +33,7 @@ def multifeed(puppet, puppet_active_key, puppet_posting_key):
                     upvote_history.append(comment.identifier)
                 except BroadcastingError as e:
                     print("Upvoting failed...")
-                    print("We have probably reached the upvote rate limit.")
+                    print("We have probably reached the upvote rate limit. {}".format(e))
                     print(str(e))
                 except Exception as er:
                     print("Error:{}".format(e))
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     while True:
         #upvote_history = []
         try:
-           time.sleep(4)
+           time.sleep(5)
            for ea_acct in accounts:
                pupp = ea_acct
                pupp_ak = accounts[ea_acct]['active_key']
