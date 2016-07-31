@@ -6,17 +6,22 @@ import time
 
 
 upvote_history = []
-
+MAX_THREADS = 4
+running_threads = []
+lock = threading.Lock()
 
 def multifeed(puppet, puppet_active_key, puppet_posting_key):
-    print("Waiting for new posts by {}".format(my_subscriptions))
+    #lock.acquire()
+    #upvote_history = []
+    print("{} : Waiting for new posts by {}".format(puppet, my_subscriptions))
     steem = Steem(wif=puppet_posting_key)
     for comment in steem.stream_comments():
 
         if comment.author in my_subscriptions:
-            if len(comment.title) > 0:
+            #if len(comment.title) > 0:
 
                 if comment.identifier in upvote_history:
+                    #upvote_history = []
                     continue
 
                 print("New post by @{} {}".format(comment.author, url_builder(comment)))
@@ -32,6 +37,8 @@ def multifeed(puppet, puppet_active_key, puppet_posting_key):
                     print(str(e))
                 except Exception as er:
                     print("Error:{}".format(e))
+                #lock.release()
+                return print("Voted!")
 
 def feed():
     print("Waiting for new posts by %s\n" % my_subscriptions)
@@ -73,15 +80,18 @@ def url_builder(comment):
 
 if __name__ == "__main__":
     while True:
+        #upvote_history = []
         try:
-           time.sleep(1)
+           time.sleep(4)
            for ea_acct in accounts:
                pupp = ea_acct
                pupp_ak = accounts[ea_acct]['active_key']
                pupp_pk = accounts[ea_acct]['posting_key']
+               print("\n\n")
+               #for i in range(MAX_THREADS):
                t = threading.Thread(target=multifeed, args=(pupp, pupp_ak, pupp_pk))
                t.start()
-               t.join()
+                   #t.join()
         except (KeyboardInterrupt, SystemExit):
             print("Quitting...")
             break
