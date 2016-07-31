@@ -13,9 +13,7 @@ This bot allows for multiple accounts to upvote your steem posts
 
         mv creds.py.example creds.py
 
-- Update creds file with your account credentials
-
-- Update multivote.py with your authors to upvote
+- Update creds file with your account credentials and the accounts to upvote
 
 - Run script
 
