@@ -1,0 +1,6 @@
+accounts = {"accountname1" : {"posting_key":"5KhPFm76jzsv1yJ1DEZwFkzoMTCYpAJxTwc4nKtjCXuv9d6UaGq", 
+                             "active_key":"STM7ZnhAg2SCdL1rghTBSkqT4suhXX2PX9oRw68a5Zi778SrDoC4i"},
+            "accountname2" : {"posting_key":"8P5JSZHjWu2HNpQQ85Cfo9d4seFHTrQPbwPaqiKobJZyigawoic2",
+                         "active_key":"STM5iHDeJV3oBxGrpAMkVtSfJxXMEM6fNeh8ec4h1LEdeXdUsPiYK"}
+            }
+
