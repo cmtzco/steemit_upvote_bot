@@ -1,14 +1,9 @@
 from piston.steem import Steem
 from piston.steem import BroadcastingError
+from creds import *
 import threading
 import time
-import creds
 
-top_writers = ["reported"]
-
-my_favorites = []
-
-my_subscriptions = top_writers  + my_favorites
 
 upvote_history = []
 

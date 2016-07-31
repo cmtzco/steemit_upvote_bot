@@ -1,3 +1,11 @@
+# my favorite blogs on steemit
+top_writers = ["reported","acct2"]
+
+# add my favorites 
+my_favorites = []
+
+my_subscriptions = top_writers  + my_favorites
+
 accounts = {"accountname1" : {"posting_key":"5KhPFm76jzsv1yJ1DEZwFkzoMTCYpAJxTwc4nKtjCXuv9d6UaGq", 
                              "active_key":"STM7ZnhAg2SCdL1rghTBSkqT4suhXX2PX9oRw68a5Zi778SrDoC4i"},
             "accountname2" : {"posting_key":"8P5JSZHjWu2HNpQQ85Cfo9d4seFHTrQPbwPaqiKobJZyigawoic2",
